@@ -1,11 +1,12 @@
 export interface Todo{
-    id : 'number';
-    title: 'string';
-    completed:'boolean';
+    id : number;
+    userId?: number
+    title: string;
+    completed:boolean;
 }
 
 export interface User{
-    id:'number';
-    name:'string';
-    email:'string';
+    id:number;
+    name:string;
+    email:string;
 }
