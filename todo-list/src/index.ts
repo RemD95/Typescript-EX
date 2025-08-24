@@ -5,11 +5,12 @@ const todos: Todo[] = [];
 
 let currentId = 1;
 
-function addTodo(title: string): Todo {
+function addTodo(title: string, metadata?: any): Todo {
   const newTodo: Todo = {
     id: currentId++,
     title: title,
-    completed: false
+    completed: false,
+    metadata:metadata,
   };
 
   todos.push(newTodo);

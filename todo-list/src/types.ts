@@ -3,6 +3,7 @@ export interface Todo{
     userId?: number
     title: string;
     completed:boolean;
+    metadata?: any;
 }
 
 export interface User{
