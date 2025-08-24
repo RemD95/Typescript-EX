@@ -5,12 +5,12 @@ const todos: Todo[] = [];
 
 let currentId = 1;
 
-function addTodo(title: string, metadata?: any): Todo {
+function addTodo(title: string, metadata?: string | object): Todo {
   const newTodo: Todo = {
     id: currentId++,
     title: title,
     completed: false,
-    metadata: metadata,
+    metadata:metadata,
   };
 
   todos.push(newTodo);
