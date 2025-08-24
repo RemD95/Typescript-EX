@@ -45,10 +45,23 @@ function getUserTodos(userId: number): Todo[] {
 
 console.log(getUserTodos(1));
 
-function error(message: string): never{
+function error(message: string): never {
   throw new Error(message);
 };
 
+function parseInput(input: unknown): string {
+  if (typeof input === "string") {
+    return input;
+  }
+
+  if (typeof input === "number") {
+    return input.toString();
+  }
+
+  return error("Unknown input-type");
+};
+
+console.log(parseInput(false));
 
 
 
