@@ -1,4 +1,4 @@
-import { Todo } from "./types"
+import type { Todo } from "./types.js"
 import type User = require("./types");
 
 const todos: Todo[] = [];
@@ -22,11 +22,37 @@ console.log("lista dei todos:", todos)
 function assignTodoToUser(userId: number, todoId: number): boolean {
   const todo = todos.find(todo => todo.id === todoId);
 
-  if(!todo){
+  if (!todo) {
     console.log(`Todo con ID ${todoId} non trovato.`)
-    return false ;
-  }
+    return false;
+  };
+
+  todo.userId = userId;
+  return true;
 }
+
+const sportTodo = addTodo("Fare più sport");
+assignTodoToUser(sportTodo.id, 99);
+
+console.log("Todo assegnato:", sportTodo)
+
+const todo1 = addTodo("Andare al mare");
+assignTodoToUser(todo1.id, 1)
+
+function getUserTodos(userId: number): Todo[] {
+  return todos.filter(todo => todo.userId === userId);
+};
+
+console.log(getUserTodos(1));
+
+
+
+
+
+
+
+
+
 
 const sayHello = (name: string): void => {
   console.log(`Ciao, ${name}!`);
