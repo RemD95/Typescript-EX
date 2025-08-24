@@ -10,7 +10,7 @@ function addTodo(title: string, metadata?: any): Todo {
     id: currentId++,
     title: title,
     completed: false,
-    metadata:metadata,
+    metadata: metadata,
   };
 
   todos.push(newTodo);
