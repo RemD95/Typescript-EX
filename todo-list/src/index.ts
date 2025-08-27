@@ -10,7 +10,7 @@ function addTodo(title: string, metadata?: string | object): Todo {
     id: currentId++,
     title: title,
     completed: false,
-    metadata:metadata,
+    metadata: metadata,
   };
 
   todos.push(newTodo);
@@ -64,14 +64,18 @@ function parseInput(input: unknown): string {
 
 console.log(parseInput(false));
 
-function updateTodo(todo:Todo, updates:Partial<Todo>):Todo{
-  return{
+function updateTodo(todo: Todo, updates: Partial<Todo>): Todo {
+  return {
     ...todo,
     ...updates,
   };
 }
 
 console.log(updateTodo);
+
+function getTodoSummary(todo: Todo): [string, boolean] {
+  return [todo.title, todo.completed]
+}
 
 
 
