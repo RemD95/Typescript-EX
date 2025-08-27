@@ -5,7 +5,7 @@ export interface Todo {
     completed: boolean;
     metadata?: any,
 }
- 
+
 interface TodoWithMetadata extends Todo {
     metadata?: any;
 }
@@ -15,4 +15,9 @@ export interface User {
     name: string;
     email: string;
     readonly: Todo[];
+}
+
+export interface Project {
+    users: User[];
+    todos: Todo[];
 }

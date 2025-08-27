@@ -1,5 +1,6 @@
 import type { Todo } from "./types.js"
-import type User = require("./types");
+import type { User } from "./types.js"
+import type { Project } from "./types.js";
 
 const todos: Todo[] = [];
 
@@ -77,8 +78,12 @@ function getTodoSummary(todo: Todo): [string, boolean] {
   return [todo.title, todo.completed]
 }
 
-
-
+function createProject(users:User[], todos:Todo[]): Project{
+  return{
+    users,
+    todos,
+  }
+}
 
 
 
