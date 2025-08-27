@@ -64,6 +64,14 @@ function parseInput(input: unknown): string {
 
 console.log(parseInput(false));
 
+function updateTodo(todo:Todo, updates:Partial<Todo>):Todo{
+  return{
+    ...todo,
+    ...updates,
+  };
+}
+
+console.log(updateTodo);
 
 
 
